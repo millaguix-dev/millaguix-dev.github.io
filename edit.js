@@ -99,7 +99,7 @@ function tarjetaEnemigo(mokepon){
     tarjetaEnemigo.classList.add('tarjeta', 'enemigo');
     tarjetaEnemigo.innerHTML = `
       <div class="frontal">
-        <img src="img/${mokepon.nombre}200x300.png">
+        <img src="./img/${mokepon.nombre}200x300.png">
         <h3>${mokepon.nombre}</h3>
       </div>
       <div class="trasero">
