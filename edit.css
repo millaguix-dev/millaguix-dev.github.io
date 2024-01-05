@@ -1,0 +1,194 @@
+
+  *{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size:100vmax;
+}
+
+#seleccion-mokepon{
+    background-color: transparent;
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#seleccion-mokepon h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#seleccion-mokepon h2{
+    padding: 15px;
+    margin: 1.75rem;
+    font-size: 2.5rem;
+}
+
+.mokepones{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+  
+/* Estilos generales para las tarjetas */
+.tarjeta {
+    width: 200px;
+    height: 320px;
+    perspective: 1000px;
+    position: relative;
+    margin: 20px;
+    cursor: pointer; /* Agregado un cursor de puntero para indicar interactividad */
+    border: 2px solid black;
+    
+  }
+  
+  /* Estilos para el contenido frontal y trasero */
+  .frontal, .trasero {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+  }
+  
+  /* Estilos para el contenido frontal */
+  .frontal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  /* Estilos para el contenido trasero */
+  .trasero {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  /* Al hacer hover, aplicar el efecto de volteo */
+  .tarjeta:hover .frontal {
+    transform: rotateY(-180deg); /* Se ajusta para que el giro sea más natural */
+  }
+  
+  .tarjeta:hover .trasero {
+    transform: rotateY(0);
+  }
+
+  .tarjeta.seleccionado {
+    border: 2px solid blue;
+    margin-bottom: 5px; /* Estilo de selección */
+  }
+  
+  .tarjeta.enemigo{
+    margin-bottom: 5px;
+  }
+
+#selec-mokepon{
+    border-radius: 20px;
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+}
+
+#selec-mokepon:hover{
+    cursor: pointer;
+    border: 1px solid rgb(70, 69, 69);
+}
+
+#combate{
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#combate #ataques{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ataques button {
+  margin-right: 10px;
+  background-color: transparent;
+  border-radius: 20px;
+  width: 120px;
+  height: 30px;
+
+}
+#ataques button:hover{
+  cursor: pointer;
+  border: 1px solid rgb(70, 69, 69);
+}
+
+#ataques button:disabled:hover {
+  cursor: not-allowed;
+}
+
+#mokeponAliado,#mokeponEnemigo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#combate #vidasAliado,#vidasEnemigo{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+#contenedor{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  min-height: 500px;
+  width: 600px;
+  margin-top: 0rem;
+}
+
+#reiniciar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#reiniciar button {
+  background-color: transparent;
+  border-radius: 20px;
+  width: 120px;
+  height: 30px;
+
+}
+#reiniciar button:hover{
+  cursor: pointer;
+  border: 1px solid rgb(70, 69, 69);
+}
+
+#contenedor p {
+  font-size: 1.3rem;
+  font-family: 'Ubuntu', sans-serif;
+  color: black
+}
