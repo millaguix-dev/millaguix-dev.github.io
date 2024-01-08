@@ -202,6 +202,9 @@ body{
     height: 250px;
     width: 130px;
   }
+  .trasero p {
+    padding: 10px 5px 10px 10px;
+  }
   img{
     height: 250px;
     width: 130px;
@@ -215,4 +218,5 @@ body{
     margin-bottom: 10px;
     margin-top: 10px;
 }
+
 }
