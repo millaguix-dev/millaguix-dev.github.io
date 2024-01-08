@@ -27,7 +27,7 @@ body{
 
 #seleccion-mokepon h2{
     padding: 15px;
-    margin: 10px;
+    margin: 4px;
     font-size: 1.75rem;
 }
 
@@ -46,9 +46,9 @@ body{
     height: 320px;
     perspective: 1000px;
     position: relative;
-    margin: 20px;
+    margin: 10px 10px 10px 5px;
     cursor: pointer; /* Agregado un cursor de puntero para indicar interactividad */
-    border: 2px solid black;
+    border: 3px solid black;
     
   }
   
