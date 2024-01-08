@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
       } else {
         alert('Por favor, selecciona un Mokepon antes de continuar.');
+        this.location.reload()
       }
     });
 

@@ -20,14 +20,15 @@ body{
 }
 
 #seleccion-mokepon h1{
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
+    margin-top: 10px;
 }
 
 #seleccion-mokepon h2{
     padding: 15px;
-    margin: 1.75rem;
-    font-size: 2.5rem;
+    margin: 10px;
+    font-size: 1.75rem;
 }
 
 .mokepones{
@@ -104,6 +105,7 @@ body{
     background-color: transparent;
     color: black;
     border: 2px solid black;
+    margin-bottom: 10px;
 }
 
 #selec-mokepon:hover{
@@ -196,6 +198,7 @@ body{
 @media (max-width: 360px){
   #selec-mokepon{
     margin-bottom: 10px;
+    margin-top: 10px;
   }
   .tarjeta{
     margin: 10px 0px 0px 0px;
@@ -212,11 +215,12 @@ body{
   #seleccion-mokepon h2{
     margin: 0px;
     font-size: 1.75rem;
+    padding: 10px 0px 0px 0px;
   }
   #seleccion-mokepon h1 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 1.7rem;
     margin-top: 10px;
+    margin-bottom: 0px;
 }
 
 }
