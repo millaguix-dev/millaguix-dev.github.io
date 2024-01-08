@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: url(./img/fondo.jpg);
+  background-color: #ddb486;
     background-repeat: no-repeat;
     background-size:100vmax;
 }
@@ -13,7 +13,6 @@ body{
 #seleccion-mokepon{
     background-color: transparent;
     width: 100vw;
-    height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -164,8 +163,9 @@ body{
   align-items: center;
   border: 2px solid black;
   min-height: 500px;
-  width: 600px;
+  min-width: 600px;
   margin-top: 0rem;
+  padding: 10px 0px 0px 0px;
 }
 
 #reiniciar{
@@ -191,4 +191,28 @@ body{
   font-size: 1.3rem;
   font-family: 'Ubuntu', sans-serif;
   color: black
+}
+
+@media (max-width: 360px){
+  #selec-mokepon{
+    margin-bottom: 10px;
+  }
+  .tarjeta{
+    margin-bottom: 10px;
+    height: 250px;
+    width: 130px;
+  }
+  img{
+    height: 250px;
+    width: 130px;
+  }
+  #seleccion-mokepon h2{
+    margin: 0px;
+    font-size: 1.75rem;
+  }
+  #seleccion-mokepon h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
 }

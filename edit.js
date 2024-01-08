@@ -159,19 +159,36 @@ function obtenerAtaqueEnemigo(mokepon){
 
 function combate(mokeponAliado,mokeponEnemigo){
   if(mokeponAliado==mokeponEnemigo){
-    let mensaje = crearMensaje("El Jugador usó: " + mokeponAliado + ". El enemigo usó: " + mokeponEnemigo + ". EMPATE!");
-        asignarMensaje(mensaje, "contenedor");
+    let mensaje = crearMensaje(mokeponAliado + " vs " + mokeponEnemigo +" ");
+    asignarMensaje(mensaje,"contenedor")
+    let random= aleatorio(0,1)
+    if(random==0){
+      vidaEnemigo--;
+    asignarVidas("Enemigo",vidaEnemigo)
+    let mensaje = crearMensaje("El Mokepon enemigo resultó herido.");
+    asignarMensaje(mensaje, "contenedor");
+    }
+    else{
+      vidaJugador -= 1;
+      asignarVidas("Aliado",vidaJugador)
+      let mensaje = crearMensaje("El Mokepon aliado resultó herido.");
+    asignarMensaje(mensaje, "contenedor");
+    }
   }
   else if (mokeponAliado == "Agua" && mokeponEnemigo == "Fuego" || mokeponAliado == "Tierra" && mokeponEnemigo == "Agua" || mokeponAliado == "Fuego" && mokeponEnemigo == "Tierra") {
-    let mensaje = crearMensaje("El Jugador usó: " + mokeponAliado + ". El enemigo usó: " + mokeponEnemigo + ". VICTORIA!");
+    let mensaje = crearMensaje( mokeponAliado + " vs " + mokeponEnemigo + "  ");
     asignarMensaje(mensaje, "contenedor");
+    mensaje=crearMensaje("VICTORIA!")
+    asignarMensaje(mensaje, "contenedor")
     vidaEnemigo--;
     asignarVidas("Enemigo",vidaEnemigo)
   }
   else{
-    let mensaje = crearMensaje("El Jugador usó: " + mokeponAliado + ". El enemigo usó: " + mokeponEnemigo + ". DERROTA!");
+    let mensaje = crearMensaje( mokeponAliado + " vs " + mokeponEnemigo + "  ");
     asignarMensaje(mensaje, "contenedor");
-    vidaJugador -= 1;
+    mensaje=crearMensaje("DERROTA!")
+    asignarMensaje(mensaje, "contenedor")
+    vidaJugador--;
     asignarVidas("Aliado",vidaJugador)
   }
 
@@ -197,15 +214,4 @@ function crearMensaje(mensaje) {
 function asignarMensaje(mensaje, id) {
   let seccion = document.getElementById(id);
   seccion.appendChild(mensaje);
-
-  if(id == "contenedor"){
-    const cantidadParrafos = seccion.querySelectorAll("p").length;
-    const alturamin = 500;
-    const alturaActual= seccion.clientHeight;
-    if(alturaActual >= alturamin){
-    console.log(alturaActual);
-    let remTotales=((alturaActual-500)/100*6)
-    seccion.style.marginTop=`${remTotales}rem`
-    }
-  }
 }
