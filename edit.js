@@ -181,12 +181,10 @@ function combate(mokeponAliado,mokeponEnemigo){
   }
   //Modificado por prueba
   else if (mokeponAliado == "Agua" && mokeponEnemigo == "Fuego" || mokeponAliado == "Tierra" && mokeponEnemigo == "Agua" || mokeponAliado == "Fuego" && mokeponEnemigo == "Tierra") {
-    let mensaje = crearMensaje(mokeponAliado);
-    asignarMensaje(mensaje, "elementoAliado");
-    mensaje = crearMensaje(mokeponEnemigo);
-    asignarMensaje(mensaje, "elementoEnemigo");
+    let mensaje = crearMensaje(mokeponAliado+ " vs "+ mokeponEnemigo);
+    asignarMensaje(mensaje,"contenedor")
     mensaje=crearMensaje("VICTORIA!")
-    asignarMensaje(mensaje, "resultado")
+    asignarMensaje(mensaje, "contenedor")
     vidaEnemigo--;
     asignarVidas("Enemigo",vidaEnemigo)
   }
