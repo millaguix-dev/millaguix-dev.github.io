@@ -43,7 +43,7 @@ body{
 /* Estilos generales para las tarjetas */
 .tarjeta {
     width: 200px;
-    height: 320px;
+    height: 325px;
     perspective: 1000px;
     position: relative;
     margin: 10px 10px 10px 10px;
@@ -68,7 +68,9 @@ body{
     justify-content: center;
     align-items: center;
   }
-
+.frontal h3 {
+  margin-bottom: 4px;
+}
   
   /* Estilos para el contenido trasero */
   .trasero {
@@ -151,6 +153,10 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#mokeponEnemigo{
+  margin-bottom: 118px;
 }
 
 #combate #vidasAliado,#vidasEnemigo{
