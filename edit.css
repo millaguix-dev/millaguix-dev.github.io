@@ -130,7 +130,7 @@ body{
 }
 
 #ataques button {
-  margin-right: 10px;
+  margin: 5px;
   background-color: transparent;
   border-radius: 20px;
   width: 120px;
