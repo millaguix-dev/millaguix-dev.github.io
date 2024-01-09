@@ -46,7 +46,7 @@ body{
     height: 320px;
     perspective: 1000px;
     position: relative;
-    margin: 10px 10px 10px 5px;
+    margin: 10px 10px 10px 10px;
     cursor: pointer; /* Agregado un cursor de puntero para indicar interactividad */
     border: 3px solid black;
     
@@ -115,7 +115,7 @@ body{
 
 #combate{
   width: 100vw;
-  height: 70vh;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -124,6 +124,7 @@ body{
 
 #combate #ataques{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -162,12 +163,24 @@ body{
 #contenedor{
   display: flex;
   flex-direction: column;
-  align-items: center;
   border: 2px solid black;
   min-height: 500px;
   min-width: 600px;
   margin-top: 0rem;
   padding: 10px 0px 0px 0px;
+}
+
+#contenedor #elementos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#contenedor .resultado{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #reiniciar{
@@ -196,6 +209,19 @@ body{
 }
 
 @media (max-width: 360px){
+  #combate{
+    flex-direction: column;
+  }
+  #ataques{
+    flex-direction: column;
+  }
+  #contenedor{
+    min-height: 100px;
+    min-width: 200px;
+  }
+  #mokeponAliado{
+    margin-bottom: 10px;
+  }
   #selec-mokepon{
     margin-bottom: 10px;
     margin-top: 10px;

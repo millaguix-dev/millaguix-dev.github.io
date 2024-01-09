@@ -6,6 +6,7 @@ const mensajes = {
   1: "Has Ganado."
 }
 
+
 function aleatorio(min,max){
   return Math.floor(Math.random()*(max-min+1)+min)
 }
@@ -41,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
     botonSeleccionar.addEventListener('click', () => {
       
       const tarjetaSeleccionada = document.querySelector('.seleccionado');
-      seccionCombate.style.display="flex"
       if (tarjetaSeleccionada) {
+        seccionCombate.style.display="flex"
         const nombreMokepon = tarjetaSeleccionada.querySelector('h3').textContent;
         const elementos = tarjetaSeleccionada.dataset.elemento.split(' ');
         mokeponEnemigo=seleccionarMokeponEnemigo()        
@@ -64,11 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
     botonReinicio.addEventListener("click", () => {
       this.location.reload();
     });
-      } else {
-        alert('Por favor, selecciona un Mokepon antes de continuar.');
-        this.location.reload()
-      }
-    });
 
     botonesAtaque.forEach(boton => {
       boton.addEventListener("click", () => {
@@ -77,6 +73,13 @@ document.addEventListener('DOMContentLoaded', function() {
         combate(elemento,elementoEnemigo);
       })
     })
+
+      } else {
+        alert('Por favor, selecciona un Mokepon antes de continuar.');
+        // this.location.reload()
+      }
+    });
+
 
   });
 
@@ -166,21 +169,24 @@ function combate(mokeponAliado,mokeponEnemigo){
     if(random==0){
       vidaEnemigo--;
     asignarVidas("Enemigo",vidaEnemigo)
-    let mensaje = crearMensaje("El Mokepon enemigo resultó herido.");
+    let mensaje = crearMensaje("VICTORIA");
     asignarMensaje(mensaje, "contenedor");
     }
     else{
       vidaJugador -= 1;
       asignarVidas("Aliado",vidaJugador)
-      let mensaje = crearMensaje("El Mokepon aliado resultó herido.");
+      let mensaje = crearMensaje("DERROTA");
     asignarMensaje(mensaje, "contenedor");
     }
   }
+  //Modificado por prueba
   else if (mokeponAliado == "Agua" && mokeponEnemigo == "Fuego" || mokeponAliado == "Tierra" && mokeponEnemigo == "Agua" || mokeponAliado == "Fuego" && mokeponEnemigo == "Tierra") {
-    let mensaje = crearMensaje( mokeponAliado + " vs " + mokeponEnemigo + "  ");
-    asignarMensaje(mensaje, "contenedor");
+    let mensaje = crearMensaje(mokeponAliado);
+    asignarMensaje(mensaje, "elementoAliado");
+    mensaje = crearMensaje(mokeponEnemigo);
+    asignarMensaje(mensaje, "elementoEnemigo");
     mensaje=crearMensaje("VICTORIA!")
-    asignarMensaje(mensaje, "contenedor")
+    asignarMensaje(mensaje, "resultado")
     vidaEnemigo--;
     asignarVidas("Enemigo",vidaEnemigo)
   }
@@ -194,7 +200,7 @@ function combate(mokeponAliado,mokeponEnemigo){
   }
 
   if (vidaEnemigo === 0 || vidaJugador === 0) {
-    const mensaje = crearMensaje(`FIN DE LA PELEA. ${mensajes[vidaJugador === 0 ? 0 : 1]}`);
+    const mensaje = crearMensaje(`${mensajes[vidaJugador === 0 ? 0 : 1]}`);
     asignarMensaje(mensaje, "contenedor");
     let botones = document.getElementsByName("ataque")
     botones.forEach(boton => {
@@ -207,6 +213,7 @@ function combate(mokeponAliado,mokeponEnemigo){
 
 function crearMensaje(mensaje) {
   let parrafo = document.createElement("p");
+  parrafo.classList.add("resultado")
   parrafo.innerHTML = mensaje;
   return parrafo;
 }
