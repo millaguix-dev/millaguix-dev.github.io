@@ -5,7 +5,32 @@ const mensajes = {
   0: "Has Perdido.",
   1: "Has Ganado."
 }
+////////////////////////////////////
+//Crear clase
+class Mokepon {
+  constructor(nombre, foto, vida){
+    this.nombre = nombre;
+    this.foto = foto;
+    this.vida = vida;
+    this.ataques = []
+  }
+}
+//Crear Objeto
+let taliyah = new Mokepon("Taliyah","./img/Taliyah200x300.png",5)
+let annie = new Mokepon("Annie","./img/Annie200x300.png",5)
+let nami = new Mokepon("Nami","./img/Nami200x300.png",5)
+console.log(taliyah);
+console.log(annie);
+console.log(nami);
 
+let mokepones= []
+
+mokepones.push(taliyah,annie,nami)
+console.log(mokepones);
+
+//Añadir ataques
+
+/////////////////////////////////////
 function aleatorio(min,max){
   return Math.floor(Math.random()*(max-min+1)+min)
 }
