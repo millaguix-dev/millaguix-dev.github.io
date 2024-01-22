@@ -19,16 +19,32 @@ class Mokepon {
 let taliyah = new Mokepon("Taliyah","./img/Taliyah200x300.png",5)
 let annie = new Mokepon("Annie","./img/Annie200x300.png",5)
 let nami = new Mokepon("Nami","./img/Nami200x300.png",5)
-console.log(taliyah);
-console.log(annie);
-console.log(nami);
-
-let mokepones= []
-
-mokepones.push(taliyah,annie,nami)
-console.log(mokepones);
-
-//Añadir ataques
+let skarner = new Mokepon("Skarner","./img/Skarner200x300.png",5)
+let qiyana = new Mokepon("Qiyana","./img/Qiyana200x300.png",5)
+let ornn = new Mokepon("Ornn","./img/Ornn200x300.png",5)
+//Añadir Ataques
+taliyah.ataques.push(
+  {nombre: "🌱", id:"btn-tierra"}
+)
+annie.ataques.push(
+  {nombre:"🔥",id:"btn-fuego"}
+)
+nami.ataques.push(
+  {nombre:"💧",id:"btn-agua"}
+)
+skarner.ataques.push(
+  {nombre:"💧",id:"btn-agua"},
+  {nombre:"🌱",id:"btn-tierra"}
+)
+qiyana.ataques.push(
+  {nombre:"💧",id:"btn-agua"},
+  {nombre:"🌱",id:"btn-tierra"},
+  {nombre:"🔥",id:"btn-fuego"}
+)
+ornn.ataques.push(
+  {nombre:"🌱",id:"btn-tierra"},
+  {nombre:"🔥",id:"btn-fuego"}
+)
 
 /////////////////////////////////////
 function aleatorio(min,max){
